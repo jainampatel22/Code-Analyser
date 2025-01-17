@@ -39,7 +39,7 @@ export default function Hero() {
         if (code.trim() !== '') {
             try {
                 const response = await axios.post(
-                    "https://codeanalyzer-backend.onrender.com/api/v1/code-review", { code }
+                    "http://localhost:3000/api/v1/code-review", { code }
                 );
 console.log(response.data.review)
                 setResponse(response.data.review);
@@ -51,10 +51,10 @@ console.log(response.data.review)
 
     return (
        <>
-         <div className="flex h-screen bg-gray-900 text-[#deff00]">
+         <div className="flex h-screen bg-white text-[#deff00]">
       {/* Left Panel - Code Editor */}
       <div className="w-1/2 border-r border-gray-700 flex flex-col">
-        <div className="p-4 bg-[#02010a] border-b-2 border-gray-800">
+        <div className="p-4 bg-white border-b-2 border-gray-800">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
             
@@ -73,7 +73,7 @@ console.log(response.data.review)
             className="h-full"
           />
         </div>
-        <div className="p-2 flex justify-center items-center bg-[#02010a] border-t border-gray-700">
+        <div className="p-2 flex justify-center items-center bg-white border-t border-gray-700">
           <button
             onClick={submitData}
             className="h-10 w-[30%] bg-[#7C3AED]/60 hover:bg-[#7C3AED]/80 text-white font-semibold py-2 px-3 rounded-md transition-colors"
@@ -85,13 +85,13 @@ console.log(response.data.review)
 
       {/* Right Panel - AI Feedback */}
       <div className=" w-1/2 flex flex-col">
-        <div className="p-4 bg-[#02010a] border-b-2 border-gray-800">
+        <div className="p-4  border-b-2 border-gray-800">
           <div className="flex items-center space-x-2">
                        <h2 className="text-lg font-semibold">Feedback</h2>
             {/* <Wand2 className="w-5 h-5 text-purple-400" /> */}
           </div>
         </div>
-        <div className="p-4 flex-1 overflow-y-auto bg-[#02010a] " id='reviewDiv'>
+        <div className="p-4 flex-1 overflow-y-auto text-black  " id='reviewDiv'>
         <ReactMarkdown
             className="prose prose-invert max-w-none"
             components={{
